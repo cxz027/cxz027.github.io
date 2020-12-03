@@ -1,0 +1,101 @@
+﻿#content-outer {
+    flex: 1 auto;
+}
+h1 {
+    font-size: 2em;
+    margin: .67em 0;
+}
+.layout_page {
+    display: flex;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1200px;
+}
+
+#page{
+    margin-top: 20px;
+    width: 70%;
+    margin-left: 5%;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 8px 6px rgba(7, 17, 27, .06);
+}
+#page{
+    padding: 40px 44px 44px;
+}
+
+#aside_content {
+    width: 25%;
+}
+#aside_content .card-widget {
+    overflow: hidden;
+    margin-top: 20px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 8px 6px rgba(7, 17, 27, .06);
+}
+#aside_content .card-content {
+    padding: 10px 12px;
+}
+#aside_content .card-info img {
+    display: inline-block;
+    padding: 5px;
+    width: 120px;
+    height: 120px;
+    border-radius: 70px;
+    vertical-align: top;
+}
+.avatar-img {
+    animation: avatar_turn_around 2s linear infinite;
+}
+#aside_content .card-info .author-info__name {
+    font-weight: 500;
+    font-size: 18px;
+}
+.aside_content .card-info .author-info__description {
+    margin-top: -3px;
+}
+#aside_content .card-info .card-info-social-icons {
+    margin: 3px 0 -3px;
+}
+#aside_content .card-info .card-info-social-icons .social-icon {
+    margin: 0 5px;
+    color: #4c4948;
+    font-size: 15px;
+}
+
+#aside_content .item-headline {
+    font-size: 8px;
+}
+#aside_content .item-headline .desc {
+    font-size: 12px;
+}
+#aside_content .item-headline span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #8480db;
+}
+
+#aside_content .card-webinfo .webinfo {
+    padding: 20px 10px;
+}
+#aside_content .card-webinfo .webinfo .webinfo-item {
+    display: block;
+    padding: 4px 0 0;
+}
+#aside_content .card-webinfo .webinfo .webinfo-item div:first-child {
+    display: inline-block;
+}
+#aside_content .card-webinfo .webinfo .webinfo-item div:last-child {
+    display: inline-block;
+    float: right;
+}
+
+.img-wrap {
+    width: 100%;
+}
+.img {
+    width: 24%;
+}

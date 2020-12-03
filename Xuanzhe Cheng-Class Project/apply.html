@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+    <title>Teaching Assistant Application</title>
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/apply.css">
+</head>
+<body>
+<div id="body-wrap">
+    <div class="top">
+        <img class="logo" src="static/images/logo1.png">
+        <ul>
+            <!--<span class="logo-title">My Home Page</span>-->
+            <li><a href="apply.html" class="active">Teaching Assistant Application</a></li>
+            <li><a href="desc.html">Computer Science Program Description</a></li>
+            <li><a href="index.html">Home Page</a></li>
+        </ul>
+    </div>
+    <main class="content">
+        <h2 class="is-center">Form Table</h2>
+        <hr>
+        <div class="form">
+            <form class="page">
+                <div class="item-wrap">
+                    <div class="item">
+                        <div class="item-input-wrap">
+                            <span class="item-label">Name</span>
+                            <input class="item-input" name="username" id="username"
+                                   onblur="check('username')" onfocus="checkFocus('username')"/>
+                        </div>
+                        <div class="tips" id="username-bot-tips"></div>
+                    </div>
+                </div>
+                <div class="item-wrap">
+                    <div class="item">
+                        <div class="item-input-wrap">
+                            <span class="item-label">ID</span>
+                            <input class="item-input" name="ID" id="ID"
+                                   onblur="check('ID')" onfocus="checkFocus('ID')"/>
+                        </div>
+                        <div class="tips" id="ID-bot-tips"></div>
+                    </div>
+                </div>
+                <div class="item-wrap">
+                    <div class="item">
+                        <div class="item-input-wrap">
+                            <span class="item-label">Gender</span>
+                            <input class="item-input" name="sex" id="sex"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-wrap">
+                    <div class="item">
+                        <div class="item-input-wrap">
+                            <span class="item-label">GPA</span>
+                            <input class="item-input" name="GPA" id="GPA"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-wrap">
+                    <div class="item">
+                        <div class="item-input-wrap">
+                            <span class="item-label">Date</span>
+                            <input class="item-input" name="Date" id="Date"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-wrap">
+                    <div class="item">
+                        <div class="item-input-wrap">
+                            <span class="item-label">P.S.</span>
+                            <textarea class="item-area" name="APP" id="APP"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <a class="item-btn" onclick="reg()">Submit</a>
+                <div class="result">
+                    <div id="res" class="res" style="display: none">
+                        <div>Submit Successfully! :</div>
+                        <div id="res-info"></div>
+                    </div>
+                </div>
+            </form>
+            <div>
+                <h2 class="is-center">Caculate GPA</h2>
+                <hr>
+                <form class="page" id="form-gpa" style="padding-bottom: 0">
+                    <div class="item-gpa">
+                        <div class="item-wrap">
+                            <div class="item">
+                                <div class="item-input-wrap">
+                                    <span class="item-label">Course 1 Grade</span>
+                                    <input class="item-input" name="ID" id="sc1"/>
+                                </div>
+                                <div class="tips" id="sc1-bot-tips"></div>
+                            </div>
+                        </div>
+                        <div class="item-wrap">
+                            <div class="item">
+                                <div class="item-input-wrap">
+                                    <span class="item-label">Course 1 CreditHour</span>
+                                    <input class="item-input" name="ID" id="to1"/>
+                                </div>
+                                <div class="tips" id="to1-bot-tips"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-gpa">
+                        <div class="item-wrap">
+                            <div class="item">
+                                <div class="item-input-wrap">
+                                    <span class="item-label">Course 2 Grade</span>
+                                    <input class="item-input" name="ID" id="sc2"/>
+                                </div>
+                                <div class="tips" id="sc2-bot-tips"></div>
+                            </div>
+                        </div>
+                        <div class="item-wrap">
+                            <div class="item">
+                                <div class="item-input-wrap">
+                                    <span class="item-label">Course 2 CreditHour</span>
+                                    <input class="item-input" name="ID" id="to2"/>
+                                </div>
+                                <div class="tips" id="to2-bot-tips"></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="is-center" style="padding-bottom: 24px">
+                    <a class="item-btn" style="background-color: #b2b8c2" onclick="addRow()">Add</a>
+                    <a class="item-btn" onclick="deal()">Caculate</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div id="footer-wrap">
+            <div class="copyright">&copy;2020 December<br>Xuanzhe Cheng<br>Student ID: 17080330</div>
+        </div>
+    </footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script type="text/javascript">
+    // Focus
+    function checkFocus(type) {
+        var nameTips = document.getElementById("username-bot-tips");
+        var pwdTips = document.getElementById("ID-bot-tips");
+        if (type == "username") {
+            nameTips.innerHTML  = "Support letters, characters, numbers"
+        } else {
+            pwdTips.innerHTML  = "Recommend using combinations"
+        }
+    }
+    // Lose
+    function check(type){
+        var name = document.getElementById("username");
+        var pwd = document.getElementById("ID");
+        var nameTips = document.getElementById("username-bot-tips");
+        var pwdTips = document.getElementById("ID-bot-tips");
+        if (type == "username") {
+            if (!name.value) {nameTips.innerHTML  = "Student's name cannot be empty!"}
+            else {nameTips.innerHTML  = ""}
+        } else {
+            if (!pwd.value) {pwdTips.innerHTML  = "ID cannot be empty!"}
+            else {pwdTips.innerHTML  = ""}
+        }
+    }
+    // Submit
+    function reg() {
+        var name = document.getElementById("username");
+        var pwd = document.getElementById("ID");
+        var sex = document.getElementById("sex");
+        var GPA = document.getElementById("GPA");
+        var Date = document.getElementById("Date");
+        var APP = document.getElementById("APP");
+        var nameTips = document.getElementById("username-bot-tips");
+        var pwdTips = document.getElementById("ID-bot-tips");
+        var resWrap = document.getElementById("res");
+        var resInfo = document.getElementById("res-info");
+        if (!name.value || !pwd.value) {
+            if (!name.value) {nameTips.innerHTML  = "Student's name cannot be empty!";}
+            if (!pwd.value) {pwdTips.innerHTML  = "ID cannot be empty!";}
+            return false
+        }
+        var html = '<div>'+ name.value +'</div>';
+        html += '<div>'+ pwd.value +'</div>';
+        html += '<div>'+ sex.value +'</div>';
+        html += '<div>'+ GPA.value +'</div>';
+        html += '<div>'+ Date.value +'</div>';
+        html += '<div>'+ APP.value +'</div>';
+        resInfo.innerHTML = html;
+        resWrap.style.display = ""
+    }
+
+    //Get
+    function getNum(level) {
+        switch (level) {
+            case "A":
+                return 4;
+                break;
+            case "B":
+                return 3;
+                break;
+            case "C":
+                return 2;
+                break;
+            case "D":
+                return 1;
+                break;
+            case "F":
+                return 0;
+                break;
+            default:
+                return 0;
+                break;
+        }
+    }
+
+    // Add Courses
+    function addRow() {
+        var $form = document.getElementById("form-gpa");
+        var cnum = document.getElementsByClassName("item-gpa").length;
+        let tr = document.createElement('div');
+        tr.innerHTML = '<div class="item-gpa"><div class="item-wrap"><div class="item"><div class="item-input-wrap">' +
+            '<span class="item-label">Course '+ (cnum+1) +' Grade</span>' +
+            '<input class="item-input" name="ID" id="sc'+ (cnum+1) +'"/></div>' +
+            '<div class="tips" id="sc'+ (cnum+1) +'-bot-tips"></div></div></div>' +
+            '<div class="item-wrap"><div class="item"><div class="item-input-wrap">' +
+            '<span class="item-label">Course '+ (cnum+1) +' CreditHour</span>' +
+            '<input class="item-input" name="ID" id="to'+ (cnum+1) +'"/></div>' +
+            '<div class="tips" id="to'+ (cnum+1) +'-bot-tips"></div></div></div></div>';
+        $form.appendChild(tr);
+    }
+    // Caculate
+    function deal() {
+        var top = 0;
+        var bot = 0;
+        var cnum = document.getElementsByClassName("item-gpa").length;
+        for (var i = 1; i <= cnum; i++) {
+            var sc = document.getElementById("sc" + i).value;
+            if (!sc) {
+                document.getElementById("sc"+ i +"-bot-tips").innerHTML  = "Course "+ i +" Grade cannot be empty!";
+            }
+            var to = document.getElementById("to" + i).value;
+            if (!to) {
+                document.getElementById("to"+ i +"-bot-tips").innerHTML  = "Course "+ i +" CreditHour cannot be empty";
+            }
+            if (!sc || !to) {
+                return false
+            }
+            top += Number(getNum(sc))*Number(to);
+            bot += Number(to)
+        }
+        var GPA = top/bot;
+        if(isNaN(GPA) || GPA<0){
+            alert("Sorry, error！\n Please check the Grade entered! \n Please correct and click the button again.");
+        }
+        else if(GPA>4){
+            alert("Sorry, error！\n Please check the CreditHour entered! \n Please correct and click the button again.");
+        }
+        else {
+            alert("Your GPA is " + GPA.toFixed(1) + "!");
+        }
+    }
+</script>
+</body>
+</html>

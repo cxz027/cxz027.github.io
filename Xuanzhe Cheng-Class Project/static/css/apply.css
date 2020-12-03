@@ -1,0 +1,65 @@
+.content {
+    background-color: #ffffff;
+    margin: 24px;
+}
+
+.page {
+    padding: 24px;
+    text-align: center;
+}
+
+.item {
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.item-label {
+    color: #726dd2;
+    width: 120px;
+    display: inline-block;
+    text-align: right;
+    font-size: 18px;
+    margin-right: 8px;
+    vertical-align: bottom;
+}
+
+.item-input {
+    width: 360px;
+    padding: 0 8px;
+    outline: none;
+    border: 1px solid #8480db;
+    line-height: 30px;
+    height: 30px;
+}
+.item-area {
+    width: 360px;
+    padding: 8px;
+    outline: none;
+    border: 1px solid #8480db;
+    height: 80px;
+    vertical-align: middle;
+}
+
+.item-input-wrap {
+    display: inline-block;
+}
+
+.item-btn {
+    background: #8480db;
+    color: #FFF;
+    padding: 0 16px;
+    height: 36px;
+    line-height: 36px;
+    display: inline-block;
+    text-align: center;
+}
+
+.tips {
+    text-align: left;
+    color: #bbbbbb;
+    margin-left: 86px;
+}
+.res {
+    color: red;
+    margin-top: 30px;
+}
